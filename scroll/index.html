@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <div class="section_test"></div>
+    <div class="container d-flex">
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main_section">
+        <div class="main_section_inner">
+          <div class="left_bar">
+            <a href="javascript:;" data-href="section_id1" class="links current"
+              >section_id1</a
+            >
+            <a href="javascript:;" data-href="section_id2" class="links"
+              >section_id2</a
+            >
+            <a href="javascript:;" data-href="section_id3" class="links"
+              >section_id3</a
+            >
+            <a href="javascript:;" data-href="section_id4" class="links"
+              >section_id4</a
+            >
+            <a href="javascript:;" data-href="section_id5" class="links"
+              >section_id5</a
+            >
+          </div>
+
+          <div class="right_bar">
+            <div class="main_part">
+              <div class="section_box" id="section_id1">
+                <h1>section_id1</h1>
+              </div>
+              <div class="section_box" id="section_id2">
+                <h1>section_id2</h1>
+              </div>
+              <div class="section_box" id="section_id3">
+                <h1>section_id3</h1>
+              </div>
+              <div class="section_box" id="section_id4">
+                <h1>section_id4</h1>
+              </div>
+              <div class="section_box" id="section_id5">
+                <h1>section_id5</h1>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-flex">
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+      <div class="section_test2">
+        <h2>Title here</h2>
+        <p>
+          adasjhd asjdjs as;askdask;sadjs sadas'd asdlhas sa sahd sa as
+          as;dsadlas djsd
+        </p>
+      </div>
+    </div>
+
+    <script>
+
+
+
+      window.addEventListener("load", (event) => {
+        console.log("page is fully loaded");
+        var headerheigh = document.querySelector(".header").offsetHeight;
+        var offsetTop = document.querySelector(".main_section").offsetTop;
+
+        console.log("headerheigh", headerheigh);
+        console.log("main_section section offsetTop", offsetTop);
+
+        window.addEventListener("scroll", (e) => {
+          var windscroll = window.pageYOffset;
+          // console.log("window scroll position-----", windscroll);
+
+          var newsection = windscroll - offsetTop + headerheigh;
+          // console.log("newsection", newsection);
+
+          var main_section = document.querySelector(".main_section");
+          if (newsection >= 0) {
+            console.log("Now Off set 0");
+            main_section.classList.add("fixed");
+          } else {
+            main_section.classList.remove("fixed");
+          }
+        });
+
+        var slides = document.getElementsByClassName("links");
+        var section_box = document.getElementsByClassName("section_box");
+
+        for (var i = 0; i < section_box.length; i++) {
+          var section_box_single = section_box[i];
+          // console.log(section_box_single); // <div id=""
+          box_boffset = section_box_single.offsetTop;
+          console.log(".offsetTop", section_box_single.offsetTop);
+        }
+        console.log(">>>>>>>", box_boffset);
+
+        for (var i = 0; i < slides.length; i++) {
+          var linksingle = slides[i];
+          var getattr = linksingle.getAttribute("data-href");
+          console.log(linksingle); // <a href=""
+          console.log("get attr------", getattr);
+          console.log(".offsetTop", linksingle.offsetTop);
+          linksingle.addEventListener("click", function (e) {
+            var data_href = e.target.getAttribute("data-href");
+            var scroll_count = offsetTop + linksingle.offsetTop;
+            console.log("scroll_count----------", scroll_count);
+
+            console.log("click", data_href);
+            elmnt.scrollIntoView();
+          });
+        }
+      });
+
+
+      scrollTo = (element) => {
+        window.scroll({
+          behavior: 'smooth',
+          left: 0,
+          top: element.offsetTop
+        });
+      }
+    </script>
+  </body>
+</html>
