@@ -1,0 +1,58 @@
+@import "./../../assets/styles/variables";
+@import "./../../assets/styles/typography";
+.product_card{
+    padding: 0 20px;
+    background: $theme-background-color;
+    .card_header{
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        
+        p{
+            margin: 0 8px;
+            max-width: calc(100% - 110px);
+        }
+        .user_follow{
+            color: $theme-color-tertiary;
+            cursor: pointer;
+        }
+    }
+    .card_inner{
+        .top_wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom:1px solid $theme-white;
+            padding-bottom: 5px;
+            .top_left_content{
+                max-width: calc(100% - 60px);
+                .title{
+                    @include typography(md, medium);
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }
+                .subtitle{
+                    @include fontSize(md);
+                    color: $theme-text-color;
+                }
+            }
+        }
+        .bottom_content{
+            padding-top: 10px;
+            &_left{
+                h3{
+                    @include typography(md, medium);
+                    color: $theme-secondary-color;
+                }
+            }
+            &_right{
+                p{
+                    @include fontSize(xs);
+                }
+                span{
+                    @include fontSize(xxs);
+                }
+            }
+        }
+    }
+}

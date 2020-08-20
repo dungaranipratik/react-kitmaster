@@ -1,0 +1,27 @@
+@import "./../../assets/styles/variables";
+
+.header {
+  height: 86px;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+.header_menu{
+  background: $theme-background-color;
+  .menuitems{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    li{
+      a{
+        display: block;
+        padding: 11px 14px;
+        color: $theme-primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,108 @@
+@import './assets/styles/fonts';
+@import './assets/styles/variables';
+
+body {
+  margin: 0;
+  @include font_regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+body, ol, ul, li, div, p, span, form, h1, h2, h3, h4, h5, h6, table, thead, th, tbody, tr, td, img, input, textarea, dd, dt, dl {
+  word-wrap: break-word;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+textarea {
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, dd, dt, dl {
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+a img, img {
+  border: none;
+  outline: none;
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+input {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.clear {
+  clear: both;
+  height: 0px;
+  overflow: hidden;
+  width: auto;
+  display: block;
+  float: none !important;
+}
+
+ul, menu, dir {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:after, &:before {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+}
+// common css
+
+.theme_bg{
+  background: $theme-background-color;
+}
+
+.d_flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex_item_center{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex_just_spce{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flex_center_just{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
